@@ -15,19 +15,8 @@
     echo 'email: ' . $email . "<br>";
     echo 'age: ' . $age . "<br>";
 
-    // we create a variable $is_email_valid, and we set it equal to the value of the expression
-    // "strpos($email, '.') !== false && strpos($email, '@') !== false"
-    // in this way, $is_eamil_valid contains the value true if and only if
-    // $email contains both the character "." and the character "@"
-    $is_email_valid = strpos($email, '.') !== false && strpos($email, '@') !== false;
-
-    // we create a variable $is_age_valid, and we set it equal to the value returned by is_numeric($age)
-    // in this way, if $age is a number or a numeric string, then $is_age_valid is true
-    // otherwise, $is_age_valid is false
-    $is_age_valid = is_numeric($age);
-
     // we check whether $is_name_valid, $is_email_valid and $is_age_valid are all true
-    if (is_name_valid($name) && $is_email_valid && $is_age_valid) {
+    if (is_name_valid($name) && is_email_valid($email) && is_age_valid($age)) {
         // if they are all true, we print "Accesso riuscito"
         echo "Accesso riuscito";
     } else {
@@ -40,6 +29,18 @@
     // this function checks whether a string representing a name contains more than three characters
     function is_name_valid($name) {
         return strlen($name) > 3;
+    }
+
+    // this function checks whether a string representing an email contains
+    // both the character "." and the character "@"
+    function is_email_valid($email) {
+        return strpos($email, '.') !== false && strpos($email, '@') !== false;
+    }
+
+    // this function checks whether a value representing the age of a user is an integer greater than 0
+    // (or a string corresponding to an integer greater than 0)
+    function is_age_valid($age) {
+        return (string)(int)$age == $age && (int)$age > 0;
     }
 
 ?>
