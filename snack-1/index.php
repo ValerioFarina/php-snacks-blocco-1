@@ -49,6 +49,26 @@
                 'name' => 'Orlando Magic',
                 'score' => 97
             ]
+        ],
+        [
+            'home_team' => [
+                'name' => 'Washington Wizards',
+                'score' => 75
+            ],
+            'visiting_team' => [
+                'name' => 'Brooklyn Nets',
+                'score' => 68
+            ]
+        ],
+        [
+            'home_team' => [
+                'name' => 'Houston Rockets',
+                'score' => 89
+            ],
+            'visiting_team' => [
+                'name' => 'San Antonio Spurs',
+                'score' => 94
+            ]
         ]
     ];
 
