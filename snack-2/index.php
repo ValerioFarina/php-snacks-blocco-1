@@ -15,9 +15,9 @@
     echo 'email: ' . $email . "<br>";
     echo 'age: ' . $age . "<br>";
 
-    // we check whether $is_name_valid, $is_email_valid and $is_age_valid are all true
-    if (is_name_valid($name) && is_email_valid($email) && is_age_valid($age)) {
-        // if they are all true, we print "Accesso riuscito"
+    // we check whether is_login_valid, applied to $name, $email and $age, returns the value true
+    if (is_login_valid($name, $email, $age)) {
+        // if it returns the value true, we print "Accesso riuscito"
         echo "Accesso riuscito";
     } else {
         // otherwise, we print "Accesso negato"
@@ -41,6 +41,11 @@
     // (or a string corresponding to an integer greater than 0)
     function is_age_valid($age) {
         return (string)(int)$age == $age && (int)$age > 0;
+    }
+
+    // this function checks whether is_name_valid, is_email_valid and is_age_valid all return the value true
+    function is_login_valid($name, $email, $age) {
+        return is_name_valid($name) && is_email_valid($email) && is_age_valid($age);
     }
 
 ?>
