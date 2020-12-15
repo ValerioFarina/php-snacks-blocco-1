@@ -15,11 +15,6 @@
     echo 'email: ' . $email . "<br>";
     echo 'age: ' . $age . "<br>";
 
-    // we create a variable $is_name_valid, and we set it equal to the value of the expression "strlen($name) > 3"
-    // in this way, if $name contains more than 3 characters, then $is_name_valid contains the value true,
-    // otherwise $is_name_valid contains the value false
-    $is_name_valid = strlen($name) > 3;
-
     // we create a variable $is_email_valid, and we set it equal to the value of the expression
     // "strpos($email, '.') !== false && strpos($email, '@') !== false"
     // in this way, $is_eamil_valid contains the value true if and only if
@@ -32,12 +27,19 @@
     $is_age_valid = is_numeric($age);
 
     // we check whether $is_name_valid, $is_email_valid and $is_age_valid are all true
-    if ($is_name_valid && $is_email_valid && $is_age_valid) {
+    if (is_name_valid($name) && $is_email_valid && $is_age_valid) {
         // if they are all true, we print "Accesso riuscito"
         echo "Accesso riuscito";
     } else {
         // otherwise, we print "Accesso negato"
         echo "Accesso negato";
+    }
+
+    // **************************** my functions ****************************
+
+    // this function checks whether a string representing a name contains more than three characters
+    function is_name_valid($name) {
+        return strlen($name) > 3;
     }
 
 ?>
