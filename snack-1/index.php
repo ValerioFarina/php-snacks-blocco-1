@@ -52,5 +52,22 @@
         ]
     ];
 
-    var_dump($matches);
+    // we iterate over the array $matches
+    for ($i = 0; $i < count($matches); $i++) {
+        // for each match, we recover
+        // the name of the home team
+        $home_team_name = $matches[$i]['home_team']['name'];
+        // the name of the visiting team
+        $visiting_team_name = $matches[$i]['visiting_team']['name'];
+        // the score of the home team
+        $home_team_score = $matches[$i]['home_team']['score'];
+        // the score of the visiting team
+        $visiting_team_score = $matches[$i]['visiting_team']['score'];
+        // we put together in a single string the teams' names
+        $teams = $home_team_name . " - " . $visiting_team_name;
+        // we put together in a single string the teams' scores
+        $score = $home_team_score . " - " . $visiting_team_score;
+        // then, we print all these informations regarding the current match
+        echo $teams . " | " . $score . "<br>";
+    }
 ?>
