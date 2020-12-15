@@ -31,4 +31,13 @@
     // otherwise, $is_age_valid is false
     $is_age_valid = is_numeric($age);
 
+    // we check whether $is_name_valid, $is_email_valid and $is_age_valid are all true
+    if ($is_name_valid && $is_email_valid && $is_age_valid) {
+        // if they are all true, we print "Accesso riuscito"
+        echo "Accesso riuscito";
+    } else {
+        // otherwise, we print "Accesso negato"
+        echo "Accesso negato";
+    }
+
 ?>
