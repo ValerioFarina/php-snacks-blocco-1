@@ -40,7 +40,7 @@
     // this function checks whether a value representing the age of a user is an integer greater than 0
     // (or a string corresponding to an integer greater than 0)
     function is_age_valid($age) {
-        return (string)(int)$age == $age && (int)$age > 0;
+        return (is_int($age) || (string)(int)$age === $age) && (int)$age > 0;
     }
 
     // this function checks whether is_name_valid, is_email_valid and is_age_valid all return the value true
